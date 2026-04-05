@@ -355,7 +355,63 @@ task-management-app/
 └── .gitignore
 ```
 
-## 🔧 Available Scripts
+## � Deployment
+
+### Backend Deployment (Railway)
+
+1. **Create Railway Account**: Sign up at [Railway.app](https://railway.app)
+
+2. **Connect GitHub Repository**:
+   - Create a new GitHub repo for your backend
+   - Push your backend code to this repo
+   - Connect Railway to your GitHub repo
+
+3. **Environment Variables**:
+   Set these in Railway dashboard:
+
+   ```env
+   MONGO_URL=mongodb+srv://username:password@cluster.mongodb.net/taskmanager
+   JWT_SECRET=your-super-secret-jwt-key-make-it-long-and-random
+   FRONTEND_URL=https://your-netlify-app.netlify.app
+   ```
+
+4. **Deploy**: Railway will automatically deploy when you push to main branch
+
+### Frontend Deployment (Netlify)
+
+1. **Create Netlify Account**: Sign up at [Netlify.com](https://netlify.com)
+
+2. **Connect GitHub Repository**:
+   - Create a new GitHub repo for your frontend
+   - Push your frontend code to this repo
+   - Connect Netlify to your GitHub repo
+
+3. **Environment Variables**:
+   Set these in Netlify dashboard:
+
+   ```env
+   VITE_API_URL=https://your-railway-backend.up.railway.app
+   ```
+
+4. **Build Settings**:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+
+5. **Deploy**: Netlify will automatically deploy when you push to main branch
+
+### MongoDB Setup
+
+1. **Create MongoDB Atlas Account**: Sign up at [MongoDB Atlas](https://cloud.mongodb.com)
+
+2. **Create Cluster**: Choose free tier
+
+3. **Network Access**: Add `0.0.0.0/0` to allow access from anywhere
+
+4. **Database User**: Create a database user with read/write access
+
+5. **Connection String**: Use the connection string in your Railway environment variables
+
+## �🔧 Available Scripts
 
 ### Backend Scripts
 

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { TaskCard } from "../components/TaskCard";
 import { Navbar } from "../components/Navbar";
 import { useAuth } from "../hooks/useAuth";
+import { API_ENDPOINTS } from "../config/api";
 
 const STATUS_FILTERS = ["All", "Pending", "In Progress", "Completed"];
 
@@ -28,7 +29,7 @@ export default function TaskDashboard() {
           setLoading(false);
           return;
         }
-        const response = await authFetch("http://localhost:3000/task/", {
+        const response = await authFetch(API_ENDPOINTS.TASKS, {
           method: "GET",
         });
         if (!response) return;
@@ -62,7 +63,7 @@ export default function TaskDashboard() {
   const handleDelete = async (id) => {
     try {
       if (!requireAuth()) return;
-      const response = await authFetch(`http://localhost:3000/task/${id}`, {
+      const response = await authFetch(API_ENDPOINTS.TASK(id), {
         method: "DELETE",
       });
       if (!response) return;

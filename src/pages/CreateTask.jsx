@@ -4,6 +4,7 @@ import { Input } from "../components/Input";
 import { Select } from "../components/Select";
 import { Navbar } from "../components/Navbar";
 import { useAuth } from "../hooks/useAuth";
+import { API_ENDPOINTS } from "../config/api";
 
 const STATUS_OPTIONS = [
   { value: "pending", label: "Pending" },
@@ -33,7 +34,7 @@ export default function CreateTaskPage() {
 
     try {
       setLoading(true);
-      const response = await authFetch("http://localhost:3000/task/", {
+      const response = await authFetch(API_ENDPOINTS.TASKS, {
         method: "POST",
         body: JSON.stringify({
           title: form.title.trim(),

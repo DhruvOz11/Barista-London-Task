@@ -3,6 +3,7 @@ import { Form } from "../components/Form";
 import { Input } from "../components/Input";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
+import { API_ENDPOINTS } from "../config/api";
 
 export default function Signup() {
   const [form, setForm] = useState({ username: "", password: "", confirm: "" });
@@ -46,7 +47,7 @@ export default function Signup() {
 
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:3000/user/signup", {
+      const response = await fetch(API_ENDPOINTS.SIGNUP, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

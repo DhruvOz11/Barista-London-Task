@@ -3,6 +3,7 @@ import { Form } from "../components/Form";
 import { Input } from "../components/Input";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
+import { API_ENDPOINTS } from "../config/api";
 
 export default function Login() {
   const [form, setForm] = useState({ username: "", password: "" });
@@ -34,7 +35,7 @@ export default function Login() {
 
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:3000/user/login", {
+      const response = await fetch(API_ENDPOINTS.LOGIN, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
