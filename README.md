@@ -454,23 +454,6 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 ## 🙋‍♂️ Support
 
 If you have any questions or need help, please open an issue on GitHub.
-
-## 🚀 Future Enhancements
-
-- [ ] Task categories and tags
-- [ ] Due dates and reminders
-- [ ] Task sharing and collaboration
-- [ ] File attachments
-- [ ] Task comments and discussions
-- [ ] Dark mode theme
-- [ ] Mobile app (React Native)
-- [ ] Email notifications
-- [ ] Task templates
-- [ ] Advanced filtering and search
-- [ ] Data export/import
-- [ ] User profile management
-- [ ] Task statistics and analytics
-
 ---
 
 **Made with ❤️ using React, Node.js, and MongoDB**
